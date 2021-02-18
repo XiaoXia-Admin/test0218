@@ -35,9 +35,10 @@ public class TestMybatis {
     public void testInsertStudent(){
         SqlSession sqlSession=MybatisUtil.getSqlSession();
         StudentDao dao=sqlSession.getMapper(StudentDao.class);
-        Student student=new Student(1005,"盾山","dunshan@163.com",30);
+        Student student=new Student(1006,"盾山","dunshan@163.com",30);
         int num=dao.insertStudent(student);
         System.out.println("执行结果num="+num);
+        System.out.println("哈哈");
     }
 
 }
