@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--        namespace是你的dao接口的全限定名称-->
+<!--select中的id是接口的方法名,resultType表示结果类型的，是sql语句执行后得到的ResultSet类型，遍历这个ResultSet得到的java对象的类型
+            值写类的权限定名称-->
+<mapper namespace="com.bjpowernode.dao.StudentDao">
+
+
+    <select id="selectStudents" resultType="com.bjpowernode.entity.Student">
+        select * from stu order by id
+    </select>
+<!--    执行插入操作 (利用占位符)-->
+    <insert id="insertStudent">
+        insert into stu values(#{id},#{name},#{email},#{age})
+    </insert>
+<!--    <insert id="....">-->
+<!--    </insert>-->
+
+
+<!--    <update id="...." >-->
+<!--    </update>-->
+
+
+<!--    <delete id="...">-->
+<!--    </delete>-->
+
+</mapper>

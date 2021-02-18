@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--mybatis输出日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <environments default="mydev">
+        <environment id="mydev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/bjpowernode"/>
+                <property name="username" value="root"/>
+                <property name="password" value="138450xjy"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <!--sql映射：指定一个dao接口的映射文件位置-->
+    <mappers>
+<!--        映射文件的类路径位置-->
+        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>
+        <!--<mapper resource="com/zh/dao/Student01Dao.xml"/>-->
+    </mappers>
+</configuration>
